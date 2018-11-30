@@ -10,11 +10,14 @@ import javax.swing.JFrame;
 
 public class TicTacToeGUI extends JFrame {
 
+    private int count = 0;
+
     public TicTacToeGUI() throws HeadlessException {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setTitle("TicTacToe");
         this.setSize(500, 500);
         this.setLayout(new GridLayout(3, 3));
+        this.setResizable(false);
 
         for (int i = 0; i <= 8; i++) {
             JButton button = new JButton();
@@ -24,7 +27,18 @@ public class TicTacToeGUI extends JFrame {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-                    button.setBackground(Color.RED);
+                    if (button.getBackground() == Color.BLACK) {
+                        if (count % 2 == 0) {
+                            button.setBackground(Color.RED);
+
+                        } else {
+                            button.setBackground(Color.BLUE);
+                        }
+                        count++;
+                    } else {
+                        //disable hover effect ???
+                    }
+
                 }
             });
 
