@@ -42,50 +42,55 @@ public class TicTacToeBL {
             situations[yPos][xPos] = Situation.RED;
         } else if (c == Color.BLUE) {
             situations[yPos][xPos] = Situation.BLUE;
-
         }
-        System.out.println("");
-        printArray();
 
     }
 
-    public Color checkIfWin() {
+    public int checkWin() {
 
+        // check if red is the winner
+        
         if (situations[0][0] == Situation.RED && situations[0][1] == Situation.RED && situations[0][2] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[1][0] == Situation.RED && situations[1][1] == Situation.RED && situations[1][2] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[2][0] == Situation.RED && situations[2][1] == Situation.RED && situations[2][2] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[0][0] == Situation.RED && situations[1][0] == Situation.RED && situations[2][0] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[0][1] == Situation.RED && situations[1][1] == Situation.RED && situations[2][1] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[0][2] == Situation.RED && situations[1][2] == Situation.RED && situations[2][2] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[0][0] == Situation.RED && situations[1][1] == Situation.RED && situations[2][2] == Situation.RED) {
-            return Color.RED;
+            return 0;
         } else if (situations[0][2] == Situation.RED && situations[1][1] == Situation.RED && situations[2][0] == Situation.RED) {
-            return Color.RED;
-        } else if (situations[0][0] == Situation.RED && situations[0][1] == Situation.RED && situations[0][2] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[1][0] == Situation.RED && situations[1][1] == Situation.RED && situations[1][2] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[2][0] == Situation.RED && situations[2][1] == Situation.RED && situations[2][2] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[0][0] == Situation.RED && situations[1][0] == Situation.RED && situations[2][0] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[0][1] == Situation.RED && situations[1][1] == Situation.RED && situations[2][1] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[0][2] == Situation.RED && situations[1][2] == Situation.RED && situations[2][2] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[0][0] == Situation.RED && situations[1][1] == Situation.RED && situations[2][2] == Situation.BLUE) {
-            return Color.BLUE;
-        } else if (situations[0][2] == Situation.RED && situations[1][1] == Situation.RED && situations[2][0] == Situation.BLUE) {
-            return Color.BLUE;
+            return 0;
         }
 
-        return Color.BLACK;
+        
+        
+        // check if blue is the winner
+        
+        if (situations[0][0] == Situation.BLUE && situations[0][1] == Situation.BLUE && situations[0][2] == Situation.BLUE) {
+            return 1;
+        } else if (situations[1][0] == Situation.BLUE && situations[1][1] == Situation.BLUE && situations[1][2] == Situation.BLUE) {
+            return 1;
+        } else if (situations[2][0] == Situation.BLUE && situations[2][1] == Situation.BLUE && situations[2][2] == Situation.BLUE) {
+            return 1;
+        } else if (situations[0][0] == Situation.BLUE && situations[1][0] == Situation.BLUE && situations[2][0] == Situation.BLUE) {
+            return 1;
+        } else if (situations[0][1] == Situation.BLUE && situations[1][1] == Situation.BLUE && situations[2][1] == Situation.BLUE) {
+            return 1;
+        } else if (situations[0][2] == Situation.BLUE && situations[1][2] == Situation.BLUE && situations[2][2] == Situation.BLUE) {
+            return 1;
+        } else if (situations[0][0] == Situation.BLUE && situations[1][1] == Situation.BLUE && situations[2][2] == Situation.BLUE) {
+            return 1;
+        } else if (situations[0][2] == Situation.BLUE && situations[1][1] == Situation.BLUE && situations[2][0] == Situation.BLUE) {
+            return 1;
+        }
+
+        return -1;
 
     }
 
