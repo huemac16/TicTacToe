@@ -6,6 +6,8 @@ import java.awt.GridLayout;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -35,20 +37,35 @@ public class TicTacToeGUI extends JFrame {
         bl.printArray();
 
         for (int i = 0; i < 9; i++) {
+            //System.out.println(String.format("y: %d  x: %d    %d", yCount, xCount, i));
             JButton button = new JButton();
+            if (i % 3 == 0 && i != 0) {
+                yCount++;
+            }
+            button.setName(String.format("%d;%d", yCount, xCount));
+
+            if (xCount >= 2) {
+                xCount = 0;
+            } else {
+                xCount++;
+            }
+
             button.setOpaque(true);
             button.setBackground(Color.BLACK);
             this.add(button);
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
-
+                    //JOptionPane.showMessageDialog(null, button.getName());
                     if (button.getBackground() == Color.BLACK) {
                         if (count % 2 == 0) {
                             button.setBackground(Color.RED);
 
+                            bl.updateArray(Color.RED, button.getName());
+
                         } else {
                             button.setBackground(Color.BLUE);
+                            bl.updateArray(Color.BLUE, button.getName());
                         }
                         count++;
 
