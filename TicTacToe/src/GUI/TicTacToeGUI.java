@@ -1,5 +1,6 @@
 package GUI;
 
+import BL.TicTacToeBL;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.HeadlessException;
@@ -12,9 +13,15 @@ import javax.swing.JOptionPane;
 public class TicTacToeGUI extends JFrame {
 
     private int count;
+    private TicTacToeBL bl;
+    private int xCount;
+    private int yCount;
 
     {
         count = 0;
+        xCount = 0;
+        yCount = 0;
+        bl = new TicTacToeBL();
     }
 
     public TicTacToeGUI() throws HeadlessException {
@@ -24,6 +31,9 @@ public class TicTacToeGUI extends JFrame {
         this.setLayout(new GridLayout(3, 3));
         this.setResizable(false);
 
+        bl.generateArray();
+        bl.printArray();
+
         for (int i = 0; i < 9; i++) {
             JButton button = new JButton();
             button.setOpaque(true);
@@ -32,6 +42,7 @@ public class TicTacToeGUI extends JFrame {
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent ae) {
+
                     if (button.getBackground() == Color.BLACK) {
                         if (count % 2 == 0) {
                             button.setBackground(Color.RED);
