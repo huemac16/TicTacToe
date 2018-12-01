@@ -7,10 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class TicTacToeGUI extends JFrame {
 
-    private int count = 0;
+    private int count;
+
+    {
+        count = 0;
+    }
 
     public TicTacToeGUI() throws HeadlessException {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,6 +41,8 @@ public class TicTacToeGUI extends JFrame {
                         }
                         count++;
 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Dieses Feld kann nicht mehr ausgewählt werden!");
                     }
 
                 }
