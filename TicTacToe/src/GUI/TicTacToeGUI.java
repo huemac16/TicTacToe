@@ -19,7 +19,7 @@ public class TicTacToeGUI extends JFrame {
         this.setLayout(new GridLayout(3, 3));
         this.setResizable(false);
 
-        for (int i = 0; i <= 8; i++) {
+        for (int i = 0; i < 9; i++) {
             JButton button = new JButton();
             button.setOpaque(true);
             button.setBackground(Color.BLACK);
@@ -35,8 +35,7 @@ public class TicTacToeGUI extends JFrame {
                             button.setBackground(Color.BLUE);
                         }
                         count++;
-                    } else {
-                        //disable hover effect ???
+
                     }
 
                 }
