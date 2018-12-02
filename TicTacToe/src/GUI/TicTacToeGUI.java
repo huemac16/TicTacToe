@@ -110,7 +110,7 @@ public class TicTacToeGUI extends JFrame {
                             count++;
 
                         } else {
-                            JOptionPane.showMessageDialog(null, "Dieses Feld kann nicht mehr ausgewählt werden!");
+
                         }
                     }
 

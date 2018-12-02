@@ -28,6 +28,7 @@ public class TicTacToeBL {
             }
             System.out.println("");
         }
+
     }
 
     public void updateArray(Color c, String pos) {
@@ -49,7 +50,6 @@ public class TicTacToeBL {
     public int checkWin() {
 
         // check if red is the winner
-        
         if (situations[0][0] == Situation.RED && situations[0][1] == Situation.RED && situations[0][2] == Situation.RED) {
             return 0;
         } else if (situations[1][0] == Situation.RED && situations[1][1] == Situation.RED && situations[1][2] == Situation.RED) {
@@ -68,10 +68,7 @@ public class TicTacToeBL {
             return 0;
         }
 
-        
-        
         // check if blue is the winner
-        
         if (situations[0][0] == Situation.BLUE && situations[0][1] == Situation.BLUE && situations[0][2] == Situation.BLUE) {
             return 1;
         } else if (situations[1][0] == Situation.BLUE && situations[1][1] == Situation.BLUE && situations[1][2] == Situation.BLUE) {
